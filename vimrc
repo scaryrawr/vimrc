@@ -9,7 +9,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-repeat'
 Plugin 'godlygeek/tabular'
 Plugin 'bling/vim-airline'
@@ -44,13 +44,13 @@ set tabstop=4
 set softtabstop=4
 set background=dark
 if has("gui_running")
-    colorscheme solarized 
+    colorscheme solarized
 else
     colorscheme koehler
 endif
 autocmd vimenter * NERDTree
 
-" Use ctrl-[hjkl] to select the active split! 
+" Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
@@ -97,7 +97,11 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
+
+" this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Trim trailing spaces on save
+autocmd FileType c,cpp,cxx,hxx,h,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
