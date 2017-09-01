@@ -1,3 +1,4 @@
+set mouse=a
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,12 +22,16 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'valloric/youcompleteme'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'joshdick/onedark.vim'
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()
 filetype plugin indent on
 set nu
 syntax on
-set mouse=a
-" set spell
+set spell
 set cursorline
 set ruler
 set backspace=indent,eol,start
@@ -43,11 +48,21 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set background=dark
-if has("gui_running")
-    colorscheme solarized
-else
-    colorscheme koehler
+
+if !has("gui_running")
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+
+    " Fix backspace with xterm
+    inoremap <Char-0x07F> <BS>
+    nnoremap <Char-0x07F> <BS>
 endif
+
+colorscheme onedark
+let g:airline_theme='onedark'
+
 autocmd vimenter * NERDTree
 
 " Use ctrl-[hjkl] to select the active split!
@@ -77,7 +92,6 @@ nmap <F8> :TagbarToggle<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -104,4 +118,18 @@ let g:UltiSnipsListSnippets="<c-e>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Trim trailing spaces on save
-autocmd FileType c,cpp,cxx,hxx,h,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,php autocmd BufWritePre <buffer> %s/\s\+$//e
+
+" Replace tabs with spaces
+autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,php autocmd BufWritePre <buffer> retab
+
+" Vim JavaScript settings
+let g:javascript_plugin_jsdoc = 1
+
+" Set gvim font
+set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+
+" Nerd commenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+
