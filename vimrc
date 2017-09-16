@@ -127,9 +127,12 @@ autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,php autocmd BufWritePre <buffer> ret
 let g:javascript_plugin_jsdoc = 1
 
 " Set gvim font
-set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+if has("gui_gtk2")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
+else
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+end
 
 " Nerd commenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
-
