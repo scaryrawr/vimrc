@@ -86,6 +86,13 @@ let g:syntastic_check_on_wq = 0
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files = 0  " No max number of files
+let g:ctrlp_working_path_mode = 0  " search from current directory
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
+"if executable('ag')
+"    set grepprg=ag\ --nogroup\ --nocolor
+"    let g:ctrlp_user_command = 'ag -i --nocolor --nogroup --hidden -g "" %s'
+"endif
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -119,10 +126,10 @@ let g:UltiSnipsListSnippets="<c-e>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Trim trailing spaces on save
-autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,php autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Replace tabs with spaces
-autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,php autocmd BufWritePre <buffer> retab
+autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> retab
 
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
