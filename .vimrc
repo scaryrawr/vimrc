@@ -93,6 +93,7 @@ nmap <F8> :TagbarToggle<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
+" Stolen from https://github.com/Valloric/YouCompleteMe/issues/36
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
