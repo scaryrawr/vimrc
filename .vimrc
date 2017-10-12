@@ -49,7 +49,7 @@ set tabstop=4
 set softtabstop=4
 set background=dark
 
-if !has("gui_running")
+if (!has("gui_running") && ($EMULATOR == "cmder"))
     set term=xterm
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
