@@ -26,4 +26,19 @@ To get YouCompleteMe working, follow their [instructions](https://github.com/Val
 
 OS X & Linux
 ------------
-Coming soon...
+There as assumptions about having git and curl and other tools pre installed.
+
+Run:
+```
+./install.sh
+```
+
+It will install [Vundle](https://github.com/VundleVim/Vundle.vim), as well as [Powerline-Fonts](https://github.com/powerline/fonts).
+
+The first time you open vim, you'll see a lot of error messages. Ignore them and in vim, type:
+```
+:PluginInstall
+```
+Afterwards, you can restart vim and everything should be fine.
+
+To get YouCompleteMe working, follow their [instructions](https://github.com/Valloric/YouCompleteMe#installation).
