@@ -7,4 +7,4 @@
     C:\PS> ./update.ps1
 #>
 
-copy .vimrc $HOME\.vimrc
+copy vimrc $HOME\.vimrc

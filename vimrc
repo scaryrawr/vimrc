@@ -4,34 +4,40 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'EinfachToll/DidYouMean'
-Plugin 'SirVer/ultisnips'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'godlygeek/tabular'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'honza/vim-snippets'
-Plugin 'joshdick/onedark.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'majutsushi/tagbar'
-Plugin 'mattn/emmet-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'valloric/youcompleteme'
+Plugin 'godlygeek/tabular'
+Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mattn/emmet-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'henrik/vim-indexed-search'
+
+Plugin 'valloric/youcompleteme'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'dawikur/algorithm-mnemonics.vim'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'EinfachToll/DidYouMean'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'tpope/vim-surround'
+
+Plugin 'mileszs/ack.vim'
+
+Plugin 'flazz/vim-colorschemes'
+Plugin 'joshdick/onedark.vim'
 call vundle#end()
 filetype plugin indent on
 set nu
@@ -135,7 +141,7 @@ let g:UltiSnipsListSnippets="<c-e>"
 " this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Trim trailing spaces on save
 autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
