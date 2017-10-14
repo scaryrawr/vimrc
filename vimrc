@@ -106,11 +106,14 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0  " No max number of files
 let g:ctrlp_working_path_mode = 0  " search from current directory
+let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
-"if executable('ag')
-"    set grepprg=ag\ --nogroup\ --nocolor
-"    let g:ctrlp_user_command = 'ag -i --nocolor --nogroup --hidden -g "" %s'
-"endif
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+    set grepformat=%f:%l:%c:%m
+    let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+    let g:ctrlp_use_caching = 0
+endif
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -135,8 +138,8 @@ function! g:UltiSnips_Complete()
 endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsListSnippets = "<c-e>"
 
 " this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
