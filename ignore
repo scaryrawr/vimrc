@@ -1,0 +1,28 @@
+## Global Ignore file for Silver Searcher
+
+# Common Version Control
+.git/
+.hg/
+.svn/
+
+# Hidden home directories
+AppData/
+Application\ Data/
+Local\ Settings/
+MicrosoftEdgeBackups/
+Start\ Menu/
+$RECYCLE.BIN/
+
+*.zip
+*.cab
+*.msi
+*.exe
+*.lnk
+
+*.o
+*.obj
+*~
+desktop.ini
+Thumbs.db
+ehthumbs.db
+

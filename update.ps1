@@ -8,3 +8,5 @@
 #>
 
 copy vimrc $HOME\.vimrc
+copy ignore $HOME\.agignore
+copy ignore $HOME\.ignore
