@@ -27,6 +27,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+Plugin 'pprovost/vim-ps1'
 
 Plugin 'scrooloose/nerdcommenter'
 
