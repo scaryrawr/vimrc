@@ -68,19 +68,22 @@ set tabstop=4
 set softtabstop=4
 set background=dark
 
+" Some special settings for conemu/cmder
 if (!has("gui_running") && ($EMULATOR == "cmder"))
     set term=xterm
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
 
-    " Fix backspace with xterm
+    " Fix backspace with conemu/cmder
     inoremap <Char-0x07F> <BS>
     nnoremap <Char-0x07F> <BS>
 endif
 
-colorscheme onedark
-let g:airline_theme='onedark'
+if (($EMULTOR == "cmder") || has("gui_running"))
+    colorscheme onedark
+    let g:airline_theme='onedark'
+endif
 
 " NERD Tree customizations
 nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -158,7 +161,7 @@ autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer
 let g:javascript_plugin_jsdoc = 1
 
 " Set gvim font
-if has("gui_gtk2")
+if !has("win32")
     set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
 else
     set guifont=Source\ Code\ Pro\ for\ Powerline:h11
