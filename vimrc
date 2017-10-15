@@ -82,7 +82,8 @@ endif
 colorscheme onedark
 let g:airline_theme='onedark'
 
-autocmd vimenter * NERDTree
+" NERD Tree customizations
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
