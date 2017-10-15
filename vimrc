@@ -53,7 +53,6 @@ set hlsearch
 set ignorecase
 set smartcase
 
-set wildmode=list:longest
 set wildmenu
 set wildignore=*.o,*.obj,*~
 
