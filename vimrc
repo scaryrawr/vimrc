@@ -38,7 +38,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 
 Plugin 'flazz/vim-colorschemes'
-Plugin 'joshdick/onedark.vim'
 call vundle#end()
 filetype plugin indent on
 set nu
@@ -79,10 +78,8 @@ if (!has("gui_running") && ($EMULATOR == "cmder"))
     nnoremap <Char-0x07F> <BS>
 endif
 
-if (($EMULTOR == "cmder") || has("gui_running"))
-    colorscheme onedark
-    let g:airline_theme='onedark'
-endif
+colorscheme zenburn 
+let g:airline_theme='zenburn'
 
 " NERD Tree customizations
 nnoremap <leader>nt :NERDTreeToggle<CR>
