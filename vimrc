@@ -17,6 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'henrik/vim-indexed-search'
+Plugin 'tpope/vim-endwise'
 
 Plugin 'valloric/youcompleteme'
 Plugin 'SirVer/ultisnips'
@@ -84,11 +85,6 @@ let g:airline_theme='zenburn'
 " NERD Tree customizations
 nnoremap <leader>nt :NERDTreeToggle<CR>
 
-" Use ctrl-[hjkl] to select the active split!
-nnoremap <silent> <c-k> :wincmd k<CR>
-nnoremap <silent> <c-j> :wincmd j<CR>
-nnoremap <silent> <c-h> :wincmd h<CR>
-nnoremap <silent> <c-l> :wincmd l<CR>
 set encoding=utf-8
 set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
 
@@ -122,30 +118,9 @@ nnoremap <F8> :TagbarToggle<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
-" Stolen from https://github.com/Valloric/YouCompleteMe/issues/36
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsListSnippets = "<c-e>"
-
-" this mapping Enter key to <C-y> to chose the current highlight item
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsListSnippets = "<c-e>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 " Trim trailing spaces on save
 autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
