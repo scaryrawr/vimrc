@@ -106,8 +106,6 @@ let g:ctrlp_working_path_mode = 0  " search from current directory
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-    set grepformat=%f:%l:%c:%m
     let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
     let g:ctrlp_use_caching = 0
 endif
@@ -118,8 +116,6 @@ nnoremap <F8> :TagbarToggle<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsListSnippets = "<c-e>"
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " Trim trailing spaces on save
