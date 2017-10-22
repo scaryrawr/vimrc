@@ -83,7 +83,7 @@ colorscheme zenburn
 let g:airline_theme='zenburn'
 
 " NERD Tree customizations
-nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 set encoding=utf-8
 set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
@@ -105,13 +105,14 @@ let g:ctrlp_max_files = 0  " No max number of files
 let g:ctrlp_working_path_mode = 0  " search from current directory
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
+
 if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
     let g:ctrlp_use_caching = 0
 endif
 
 " Tagbar
-nnoremap <F8> :TagbarToggle<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
