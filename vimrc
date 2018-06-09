@@ -4,42 +4,23 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-repeat'
-Plugin 'godlygeek/tabular'
 Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'majutsushi/tagbar'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'tpope/vim-endwise'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
-
-Plugin 'valloric/youcompleteme'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'dawikur/algorithm-mnemonics.vim'
-Plugin 'mattn/emmet-vim'
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'pprovost/vim-ps1'
-
-Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'EinfachToll/DidYouMean'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'tpope/vim-surround'
-
-Plugin 'mileszs/ack.vim'
-
 Plugin 'flazz/vim-colorschemes'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mileszs/ack.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'pprovost/vim-ps1'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
 set nu
@@ -67,18 +48,6 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set background=dark
-
-" Some special settings for conemu/cmder
-if (!has("gui_running") && ($EMULATOR == "cmder"))
-    set term=xterm
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
-
-    " Fix backspace with conemu/cmder
-    inoremap <Char-0x07F> <BS>
-    nnoremap <Char-0x07F> <BS>
-endif
 
 colorscheme zenburn 
 let g:airline_theme='zenburn'
@@ -112,13 +81,8 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
-" Tagbar
-nnoremap <silent> <F8> :TagbarToggle<CR>
-
 " Airline
 let g:airline_powerline_fonts = 1
-
-let g:UltiSnipsExpandTrigger="<c-j>"
 
 " Trim trailing spaces on save
 autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -135,7 +99,3 @@ if !has("win32")
 else
     set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 end
-
-" Nerd commenter
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1

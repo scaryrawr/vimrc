@@ -8,15 +8,24 @@
     C:\PS> ./install.ps1
 #>
 
-copy vimrc $HOME\.vimrc
-copy ignore $HOME\.agignore
-copy ignore $HOME\.ignore
+param (
+    [switch]$Fonts = $false,
+    [switch]$Update = $false
+)
 
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME\.vim\bundle\Vundle.vim
+copy vimrc $HOME/.vimrc
+copy ignore $HOME/.agignore
+copy ignore $HOME/.ignore
 
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.ps1
+if (!$Update) {
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+}
 
-cd ..
-Remove-Item -Recurse -Force fonts
+if ($Fonts) {
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.ps1
+
+    cd ..
+    Remove-Item -Recurse -Force fonts
+}
