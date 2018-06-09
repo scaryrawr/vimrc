@@ -14,15 +14,14 @@ Open an elevated (might not need to be elevated) powershell Window, then you can
 ./install.ps1
 ```
 
-It will install [Vundle](https://github.com/VundleVim/Vundle.vim), as well as [Powerline-Fonts](https://github.com/powerline/fonts).
+It will install [Vundle](https://github.com/VundleVim/Vundle.vim).
+As well as [Powerline-Fonts](https://github.com/powerline/fonts) if -Fonts is set.
 
 The first time you open vim, you'll see a lot of error messages. Ignore them and in vim, type:
 ```
 :PluginInstall
 ```
 Afterwards, you can restart vim and everything should be fine.
-
-To get YouCompleteMe working, follow their [instructions](https://github.com/Valloric/YouCompleteMe#installation).
 
 OS X & Linux
 ------------
@@ -33,12 +32,11 @@ Run:
 ./install.sh
 ```
 
-It will install [Vundle](https://github.com/VundleVim/Vundle.vim), as well as [Powerline-Fonts](https://github.com/powerline/fonts).
+It will install [Vundle](https://github.com/VundleVim/Vundle.vim).
+As well as [Powerline-Fonts](https://github.com/powerline/fonts) if -f is set.
 
 The first time you open vim, you'll see a lot of error messages. Ignore them and in vim, type:
 ```
 :PluginInstall
 ```
 Afterwards, you can restart vim and everything should be fine.
-
-To get YouCompleteMe working, follow their [instructions](https://github.com/Valloric/YouCompleteMe#installation).
