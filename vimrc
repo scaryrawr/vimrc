@@ -7,8 +7,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ErichdonGubler/vim-sublime-monokai'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pprovost/vim-ps1'
@@ -23,7 +26,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
-set nu
+set relativenumber
 syntax on
 set spell
 set cursorline
@@ -49,8 +52,8 @@ set tabstop=4
 set softtabstop=4
 set background=dark
 
-colorscheme zenburn 
-let g:airline_theme='zenburn'
+colorscheme sublimemonokai
+let g:airline_theme='badwolf'
 
 " NERD Tree customizations
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
