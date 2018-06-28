@@ -9,31 +9,14 @@ Windows
 There are assumptions about already having [git](https://git-scm.com/), [curl](https://curl.haxx.se/), which you can install using [Chocolatey](https://chocolatey.org/).
 
 
-Open an elevated (might not need to be elevated) powershell Window, then you can run:
+Open a powershell Window (does not need elevation), then you can run:
 ```
 ./install.ps1
 ```
 
 It will install [Vundle](https://github.com/VundleVim/Vundle.vim).
-As well as [Powerline-Fonts](https://github.com/powerline/fonts) if -Fonts is set.
-
-The first time you open vim, you'll see a lot of error messages. Ignore them and in vim, type:
-```
-:PluginInstall
-```
-Afterwards, you can restart vim and everything should be fine.
-
-OS X & Linux
-------------
-There as assumptions about having git and curl and other tools pre installed.
-
-Run:
-```
-./install.sh
-```
-
-It will install [Vundle](https://github.com/VundleVim/Vundle.vim).
-As well as [Powerline-Fonts](https://github.com/powerline/fonts) if -f is set.
+As well as [Powerline-Fonts](https://github.com/powerline/fonts) if `-Fonts` is set.
+Runs after the first run need `-Update` otherwise it'll try installing Vundle again.
 
 The first time you open vim, you'll see a lot of error messages. Ignore them and in vim, type:
 ```
