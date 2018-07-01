@@ -5,6 +5,9 @@
 .hg/
 .svn/
 
+# NodeJS
+node_modules/
+
 # Hidden home directories
 AppData/
 Application\ Data/

@@ -1,6 +1,8 @@
-set mouse=a
 set nocompatible
+set mouse=a
+
 filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -9,48 +11,54 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ErichdonGubler/vim-sublime-monokai'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pprovost/vim-ps1'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
+
 filetype plugin indent on
-set relativenumber
 syntax on
-set spell
-set cursorline
-set ruler
-set backspace=indent,eol,start
-set showmatch
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-
-set wildmenu
-set wildignore=*.o,*.obj,*~
-
-set foldmethod=indent
-set foldnestmax=3
-set nofoldenable
 
 set autoindent
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set softtabstop=4
 set background=dark
+set backspace=indent,eol,start
+set cursorline
+set expandtab
+set foldmethod=indent
+set foldnestmax=3
+set hlsearch
+set ignorecase
+set incsearch
+set nofoldenable
+set nu
+set relativenumber
+set ruler
+set shiftwidth=4
+set showmatch
+set smartcase
+set softtabstop=4
+set spell
+set tabstop=4
+set wildignore=*.o,*.obj,*~
+set wildmenu
 
 colorscheme sublimemonokai
 let g:airline_theme='badwolf'
@@ -79,6 +87,11 @@ let g:ctrlp_working_path_mode = 0  " search from current directory
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
 
+" YCM UltiSnips
+let g:UltiSnipsExpandTrigger = '<c-tab>'
+let g:UltiSnipsListSnippets = '<c-S-tab>'
+inoremap <c-x><c-k> <c-x><c-k>
+
 if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
     let g:ctrlp_use_caching = 0
@@ -95,6 +108,8 @@ autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer
 
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
+
+au GUIEnter * simalt ~x
 
 " Set gvim font
 if !has("win32")
