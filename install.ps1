@@ -28,22 +28,23 @@ Get-Content -Path "$HOME/.vimrc" | Where-Object { $_ -match $regex } | ForEach-O
     $dirname = $repo.Split('/')[1]
     $destination = "$HOME/.vim/bundle/$dirname"
 
+    Write-Host "Processing Plugin $dirname"
+
     # Pull updates if there or install if not there
     if (Test-Path -Path $destination) {
         Set-Location -Path $destination
         git pull
     } else {
         git clone https://github.com/$repo $destination
+        Set-Location -Path $destination
     }
+
+    git submodule update --init --recursive
 }
 
 $ycmDir = "$HOME/.vim/bundle/YouCompleteMe"
 if ($BuildYouCompleteMe -And (Test-Path -Path $ycmDir)) {
     Set-Location -Path $ycmDir
-
-    # Error message on linux
-    git submodule update --init --recursive
-
     python ./install.py --all
 }
 
