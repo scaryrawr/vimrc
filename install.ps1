@@ -13,9 +13,9 @@ param (
     [switch]$BuildYouCompleteMe = $false
 )
 
-copy vimrc $HOME/.vimrc
-copy ignore $HOME/.agignore
-copy ignore $HOME/.ignore
+Copy-Item -Path vimrc  -Destination "$HOME/.vimrc"
+Copy-Item -Path ignore -Destination "$HOME/.agignore"
+Copy-Item -Path ignore -Destination "$HOME/.ignore"
 
 # Check that line starts with Plugin (potentially with whitespace before it)
 # we don't want to install a plugin that may have been commented out
@@ -23,7 +23,7 @@ $regex = "^\s*Plugin\s+'(.+)'"
 
 Push-Location
 
-Get-Content -Path $HOME/.vimrc | Where-Object { $_ -match $regex } | ForEach-Object {
+Get-Content -Path "$HOME/.vimrc" | Where-Object { $_ -match $regex } | ForEach-Object {
     $repo = ($_ | Select-String -Pattern $regex).Matches[0].Groups[1].ToString()
     $dirname = $repo.Split('/')[1]
     $destination = "$HOME/.vim/bundle/$dirname"
@@ -51,9 +51,9 @@ Pop-Location
 
 if ($Fonts) {
     git clone https://github.com/powerline/fonts.git --depth=1
-    cd fonts
+    Set-Location -Path ./fonts
     ./install.ps1
 
-    cd ..
+    Set-Location -Path ..
     Remove-Item -Recurse -Force fonts
 }
