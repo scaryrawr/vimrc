@@ -108,8 +108,6 @@ autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
 
-au GUIEnter * simalt ~x
-
 " Set gvim font
 if !has("win32")
     set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
