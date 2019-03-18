@@ -112,5 +112,8 @@ let g:javascript_plugin_jsdoc = 1
 if !has("win32")
     set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
 else
+    " Windows Settings
     set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+    set shell=pwsh
+    set shellcmdflag=-command
 end
