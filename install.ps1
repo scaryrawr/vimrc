@@ -13,9 +13,9 @@ param (
     [switch]$BuildYouCompleteMe = $false
 )
 
-Copy-Item -Path vimrc  -Destination "$HOME/.vimrc"
-Copy-Item -Path ignore -Destination "$HOME/.agignore"
-Copy-Item -Path ignore -Destination "$HOME/.ignore"
+New-Item -ItemType SymbolicLink -Path $HOME -Name ".vimrc" -Target vimrc -ErrorAction Stop
+New-Item -ItemType SymbolicLink -Path $HOME -Name ".agignore" -Target ignore -ErrorAction Stop
+New-Item -ItemType SymbolicLink -Path $HOME -Name ".ignore" -Target ignore -ErrorAction Stop
 
 # Check that line starts with Plugin (potentially with whitespace before it)
 # we don't want to install a plugin that may have been commented out
