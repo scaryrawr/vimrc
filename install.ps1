@@ -13,16 +13,18 @@ param (
     [switch]$BuildYouCompleteMe = $false
 )
 
+$directory = Split-Path -Path $PSCommandPath -Parent
+
 if (!(Test-Path -Path "${HOME}/.vimrc")) {
-    New-Item -ItemType SymbolicLink -Path $HOME -Name ".vimrc" -Target vimrc -ErrorAction Stop
+    New-Item -ItemType SymbolicLink -Path $HOME -Name ".vimrc" -Target "$directory/vimrc" -ErrorAction Stop
 }
 
 if (!(Test-Path -Path "${HOME}/.agignore")) {
-    New-Item -ItemType SymbolicLink -Path $HOME -Name ".agignore" -Target ignore -ErrorAction Stop
+    New-Item -ItemType SymbolicLink -Path $HOME -Name ".agignore" -Target "$directory/ignore" -ErrorAction Stop
 }
 
 if (!(Test-Path -Path "${HOME}/.ignore")) {
-    New-Item -ItemType SymbolicLink -Path $HOME -Name ".ignore" -Target ignore -ErrorAction Stop
+    New-Item -ItemType SymbolicLink -Path $HOME -Name ".ignore" -Target "$directory/ignore" -ErrorAction Stop
 }
 
 # Check that line starts with Plugin (potentially with whitespace before it)
