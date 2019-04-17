@@ -5,7 +5,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'scaryrawr/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
@@ -114,6 +114,6 @@ if !has("win32")
 else
     " Windows Settings
     set guifont=Source\ Code\ Pro\ for\ Powerline:h11
-    set shell=pwsh
-    set shellcmdflag=-command
+    " set shell=pwsh
+    " set shellcmdflag=-command
 end
