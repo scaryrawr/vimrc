@@ -27,6 +27,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
@@ -40,7 +41,6 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set cursorline
-set expandtab
 set foldmethod=indent
 set foldnestmax=3
 set hlsearch
@@ -48,12 +48,10 @@ set ignorecase
 set incsearch
 set nofoldenable
 set nu
-set relativenumber
 set ruler
 set shiftwidth=4
 set showmatch
 set smartcase
-set softtabstop=4
 set spell
 set tabstop=4
 set wildignore=*.o,*.obj,*~
