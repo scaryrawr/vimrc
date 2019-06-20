@@ -29,7 +29,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'scaryrawr/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
@@ -64,7 +64,7 @@ let g:airline_theme='badwolf'
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 set encoding=utf-8
-set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+" set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -98,10 +98,10 @@ endif
 let g:airline_powerline_fonts = 1
 
 " Trim trailing spaces on save
-autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
+" autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Replace tabs with spaces
-autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> retab
+" autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> retab
 
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
