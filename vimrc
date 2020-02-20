@@ -5,7 +5,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'scaryrawr/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
@@ -29,7 +29,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
-Plugin 'scaryrawr/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
