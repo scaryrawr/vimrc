@@ -18,6 +18,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pprovost/vim-ps1'
+Plugin 'prettier/vim-prettier'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
@@ -105,6 +106,10 @@ let g:airline_powerline_fonts = 1
 
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
+
+" Prettier settings
+let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_config_files = ['.prettierrc']
 
 " Set gvim font
 if !has("win32")
