@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dylanaraps/wal.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ErichdonGubler/vim-sublime-monokai'
 Plugin 'flazz/vim-colorschemes'
@@ -37,6 +38,8 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
+colorscheme wal
+
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -56,9 +59,6 @@ set spell
 set tabstop=4
 set wildignore=*.o,*.obj,*~
 set wildmenu
-
-colorscheme sublimemonokai
-let g:airline_theme='badwolf'
 
 " NERD Tree customizations
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
@@ -97,21 +97,5 @@ endif
 " Airline
 let g:airline_powerline_fonts = 1
 
-" Trim trailing spaces on save
-" autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> %s/\s\+$//e
-
-" Replace tabs with spaces
-" autocmd FileType c,cpp,cxx,hxx,h,cs,java,js,json,php autocmd BufWritePre <buffer> retab
-
 " Vim JavaScript settings
 let g:javascript_plugin_jsdoc = 1
-
-" Set gvim font
-if !has("win32")
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
-else
-    " Windows Settings
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h11
-    " set shell=pwsh
-    " set shellcmdflag=-command
-end
